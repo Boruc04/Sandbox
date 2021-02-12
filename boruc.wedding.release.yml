@@ -5,6 +5,8 @@ trigger:
     include:
     - release/*
 
+pr: none
+
 pool:
   vmImage: 'ubuntu-latest'
 

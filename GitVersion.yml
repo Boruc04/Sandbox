@@ -23,7 +23,7 @@ branches:
     is-release-branch: false
   pull-request:
     mode: ContinuousDelivery
-    tag: PullRequest
+    tag: 'PullRequest'
     increment: None                 #PR not change any in code.
     prevent-increment-of-merged-branch-version: false
     tag-number-pattern: '[/-](?<number>\d+)[-/]'
