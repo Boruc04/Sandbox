@@ -1,0 +1,26 @@
+name: Boruc.WeddingWeb.PullRequest-$(FullSemVer)
+
+pr:
+  branches:
+    include:
+      - feature/*
+      - bugfix/*
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: UseDotNet@2
+  inputs:
+    version: '3.1.x'
+  displayName: Use Dot Net.
+
+- task: gitversion/setup@0
+  inputs:
+    versionSpec: '5.x'
+
+- task: gitversion/execute@0
+  inputs:
+    useConfigFile: true
+    configFilePath: './GitVersion.yml'
+    additionalArguments: '/updateprojectfiles'

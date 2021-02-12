@@ -1,0 +1,20 @@
+name: Boruc.WeddingWeb.Release-$(FullSemVer)
+
+trigger: 
+  branches:
+    include:
+      - release/*
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: gitversion/setup@0
+  inputs:
+    versionSpec: '5.x'
+
+- task: gitversion/execute@0
+  inputs:
+    useConfigFile: true
+    configFilePath: './GitVersion.yml'
+    additionalArguments: '/updateprojectfiles'
