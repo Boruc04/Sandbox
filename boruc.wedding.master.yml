@@ -3,9 +3,7 @@ name: Boruc.WeddingWeb.Master-$(FullSemVer)
 trigger: 
   branches:
     include:
-      - master
-
-pr: none
+    - master
 
 pool:
   vmImage: 'ubuntu-latest'

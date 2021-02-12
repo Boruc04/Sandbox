@@ -3,9 +3,7 @@ name: Boruc.WeddingWeb.Release-$(FullSemVer)
 trigger: 
   branches:
     include:
-      - release/*
-
-pr: none
+    - release/*
 
 pool:
   vmImage: 'ubuntu-latest'

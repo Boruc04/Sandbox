@@ -3,8 +3,8 @@ name: Boruc.WeddingWeb.PullRequest-$(FullSemVer)
 pr:
   branches:
     include:
-      - feature/*
-      - bugfix/*
+    - feature/*
+    - bugfix/*
 
 pool:
   vmImage: 'ubuntu-latest'
