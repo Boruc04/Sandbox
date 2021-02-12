@@ -5,9 +5,9 @@ trigger:
     exclude:
     - master
     - release/*
-    - feature/*
 
 pr:
+  autoCancel: false
   branches:
     include:
     - feature/*
