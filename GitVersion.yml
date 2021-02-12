@@ -2,14 +2,22 @@
 # This file contains configuration for GitVersion
 # You can override it by executing command: gitversion init (or dotnet gitversion init)
 assembly-informational-format: '{AssemblySemVer}'
-mode: Mainline
+mode: ContinuousDelivery
 branches:
   master:
     tag: ''
-    increment: Patch                #any commit change minor number
+    increment: None                #any commit change minor number
     prevent-increment-of-merged-branch-version: true
     track-merge-target: false
-    regex: master|releases?[/-]
+    regex: master
+    tracks-release-branches: false  #Indicates this branch config represents develop in GitFlow.
+    is-release-branch: false        #Indicates this branch config represents a release branch in GitFlow.
+  release:
+    tag: ''
+    increment: Minor                #any commit change minor number
+    prevent-increment-of-merged-branch-version: true
+    track-merge-target: false
+    regex: releases?[/-]
     tracks-release-branches: false  #Indicates this branch config represents develop in GitFlow.
     is-release-branch: false        #Indicates this branch config represents a release branch in GitFlow.
   feature:
@@ -18,7 +26,7 @@ branches:
     increment: Inherit
     prevent-increment-of-merged-branch-version: true
     track-merge-target: false
-    regex: feature?[/-]
+    regex: feature?[/-]|bugfix?[/-]
     tracks-release-branches: false
     is-release-branch: false
   pull-request:
