@@ -20,7 +20,6 @@ branches:
     regex: releases?[/-]
     tracks-release-branches: false  #Indicates this branch config represents develop in GitFlow.
     is-release-branch: false        #Indicates this branch config represents a release branch in GitFlow.
-    is-source-branch-for: ['master']
   feature:
     mode: ContinuousDelivery
     tag: useBranchName
@@ -30,7 +29,6 @@ branches:
     regex: feature?[/-]|bugfix?[/-]
     tracks-release-branches: false
     is-release-branch: false
-    is-source-branch-for: ['master']
   pull-request:
     mode: ContinuousDelivery
     tag: 'PullRequest'
@@ -41,7 +39,6 @@ branches:
     regex: (pull|pull\-requests|pr|[0-9]+)[/-]
     tracks-release-branches: false
     is-release-branch: false
-    is-source-branch-for: ['master']
   hotfix:
     mode: ContinuousDelivery
     tag: beta
@@ -51,6 +48,5 @@ branches:
     regex: hotfix?[/-]
     tracks-release-branches: true
     is-release-branch: false
-    is-source-branch-for: ['master']
 ignore:
   sha: []
