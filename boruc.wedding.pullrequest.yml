@@ -5,6 +5,7 @@ trigger:
     exclude:
     - master
     - release/*
+    - feature/*
 
 pr:
   branches:
