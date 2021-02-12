@@ -5,8 +5,9 @@ pr:
     include:
     - feature/*
     - bugfix/*
-
-trigger: none
+    exclude:
+    - master
+    - release/*
 
 pool:
   vmImage: 'ubuntu-latest'
