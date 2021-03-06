@@ -1,25 +1,23 @@
-# According to documentation, this file must stay in root directory.
-# This file contains configuration for GitVersion
-# You can override it by executing command: gitversion init (or dotnet gitversion init)
-assembly-informational-format: '{AssemblySemVer}'
-mode: Mainline
+assembly-versioning-scheme: MajorMinorPatchTag
+assembly-informational-format: '{Major}.{Minor}.{Patch}.{env:BUILD_NUMBER}'
+mode: ContinuousDeployment
 branches:
   master:
     tag: ''
-    increment: None                #any commit change minor number
+    increment: None
     prevent-increment-of-merged-branch-version: true
     track-merge-target: false
     regex: master
     tracks-release-branches: false
-    is-release-branch: false      
+    is-release-branch: false
   release:
     tag: ''
-    increment: Minor                #any commit change minor number
+    increment: Minor
     prevent-increment-of-merged-branch-version: true
     track-merge-target: true
     regex: releases?[/-]
-    tracks-release-branches: false  #Indicates this branch config represents develop in GitFlow.
-    is-release-branch: false        #Indicates this branch config represents a release branch in GitFlow.
+    tracks-release-branches: false
+    is-release-branch: false
   feature:
     mode: ContinuousDelivery
     tag: useBranchName
@@ -31,8 +29,8 @@ branches:
     is-release-branch: false
   pull-request:
     mode: ContinuousDelivery
-    tag: 'PullRequest'
-    increment: None                 #PR not change any in code.
+    tag: PullRequest
+    increment: None
     prevent-increment-of-merged-branch-version: false
     tag-number-pattern: '[/-](?<number>\d+)[-/]'
     track-merge-target: false
