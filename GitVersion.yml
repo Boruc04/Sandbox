@@ -1,5 +1,5 @@
 assembly-versioning-scheme: MajorMinorPatchTag
-assembly-informational-format: '{Major}.{Minor}.{Patch}.{env:BUILD_NUMBER}'
+assembly-informational-format: '{FullSemVer}'
 mode: ContinuousDeployment
 branches:
   master:

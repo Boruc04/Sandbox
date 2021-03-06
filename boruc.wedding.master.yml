@@ -1,4 +1,4 @@
-name: Boruc.WeddingWeb.Master-$(FullSemVer)
+name: Boruc.WeddingWeb.Master-$(GitVersion.SemVer)
 
 trigger: 
   branches:
