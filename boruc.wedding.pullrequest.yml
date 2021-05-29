@@ -1,10 +1,6 @@
 name: Boruc.WeddingWeb.PullRequest-$(FullSemVer)
 
-trigger:
-  branches:
-    exclude:
-    - master
-    - release/*
+trigger: none
 
 pr:
   autoCancel: false
